@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: resultserver-deployment
+  name: resultserver-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resultserver-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: resultserver-deployment
+    spec:
+      containers:
+      - image: techproawsdevopsteam/result-server:v1
+        name: result-server
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef: 
+              name: server-config
+        env:
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MYSQL_PASSWORD
+                name: mysql-secret
+        resources: {}
+status: {}
