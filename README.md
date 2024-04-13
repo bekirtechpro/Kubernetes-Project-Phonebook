@@ -180,7 +180,7 @@ SECRETS AND CONFIGMAP
 
 ## Steps to Solution
   
-- Step 1: Download or clone project definition from `techprodevos348` repo on Github
+- Step 1: Download or clone project definition from `https://github.com/techproeducation-batchs/B224-AWSDevops-TR` repo on Github
 
 - Step 2: Create your Kubernetes environment with cloudformation template
 
